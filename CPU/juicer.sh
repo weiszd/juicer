@@ -206,9 +206,37 @@ if [ -z "$ligation" ]
 then
     case $site in
 	HindIII) ligation="AAGCTAGCTT";;
+	MseI)  ligation="TTATAA";;
 	DpnII) ligation="GATCGATC";;
 	MboI) ligation="GATCGATC";;
-	NcoI) ligation="CCATGCATGG";;
+        MboI) ligation="GATCGATC";;
+	NlaIII) ligation="CATG";;
+        NcoI) ligation="CCATGCATGG";;
+	MspI) ligation="CCGCGG";;
+	HinP1I) ligation="GCGCGC";;
+	StyD4I) ligation="CCNGGCCNGG";;
+	SaII) ligation="GTCGATCGAC";;
+	NheI) ligation="GCTAGCTAGC";;
+	StyI) ligation="CCWWGCWWGG";;
+	XhoI) ligation="CTCGATCGAG";;
+	merge) ligation="GATCGATC";;
+	BglII) ligation="AGATCGATCT";;
+	CviJI) ligation="'(AGCC|GGCT|AGCT|GGCC|GGGG|GGGA|AGGG|CCCT|CCCC|TCCC|AGAG|CTCT)'";;
+	MboI+MseI) ligation="'(GATCGATC|TTATAA)'";;
+	CviQI+MseI) ligation="'(GTATAC|TTATAA|GTATAA|TTATAC)'";;
+	MseI+CviAII) ligation="'(CATATG|CATTAA|TTAATG|TTATAA)'";;
+	Csp6I+MseI) ligation="'(GTATAC|TTATAA|GTATAA|TTATAC)'";;
+	MseI+Csp6I) ligation="'(GTATAC|TTATAA|GTATAA|TTATAC)'";;
+	MluCI) ligation="AATTAATT";;
+	CviAII) ligation="CATATG";;
+        Csp6I) ligation="GTATAC";;
+        Csp6I+MseI) ligation="'(GTATAC|TTATAA|GTATAA|TTATAC)'";;
+        MseI+Csp6I) ligation="'(GTATAC|TTATAA|GTATAA|TTATAC)'";;
+        MseI+CviAII) ligation="'(CATATG|CATTAA|TTAATG|TTATAA)'";;
+        CviAII+MseI) ligation="'(CATATG|CATTAA|TTAATG|TTATAA)'";;
+        CviAII+Csp6I) ligation="'(CATATG|GTATAC|CATTAC|GTAATG)'";;
+        Csp6I+CviAII) ligation="'(CATATG|GTATAC|CATTAC|GTAATG)'";;
+        Csp6I+CviAII+MseI) ligation="'(CATATG|CATTAA|CATTAC|TTAATG|TTATAA|TTATAC|GTATAC|GTATAA|GTAATG)'";;
 	none) ligation="XXXX";;
 	*)  ligation="XXXX"
 	    echo "$site not listed as recognized enzyme. Using $site_file as site file"
