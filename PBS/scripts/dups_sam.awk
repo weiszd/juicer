@@ -182,8 +182,8 @@ BEGIN {
 }
 {
     if (NF < 11) { print; next }
-    _cbtag = $NF;
-    if (substr(_cbtag,1,4) != "cb:Z") { print; next }
+    _cbtag = $(NF-1);
+    if (substr(_cbtag, 1, 4) != "cb:Z") { _cbtag = $NF; if (substr(_cbtag, 1, 4) != "cb:Z") { print; next } }
 
     if (pname == $1) {
         cur_n++;
